@@ -1,8 +1,9 @@
 // Here we will utilize the axios library to perform GET/POST requests
-var axios = require("axios");
+// var axios = require("axios");
+import axios from "axios";
 
 // Exporting an object with methods for retrieving and posting data to our API
-module.exports = {
+export default  {
   // Returns a promise object we can .then() off inside our Parent component
   getClicks: function() {
     return axios.get("/api");

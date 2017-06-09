@@ -8,10 +8,9 @@ import PropTypes from 'prop-types';
 import router from "react-router";
 
 // Include the Route component for displaying individual routes
-var Route = router.Route;
-
 // Include the Router component to contain all our Routes
 // Here where we can pass in some configuration as props
+var Route = router.Route;
 var Router = router.Router;
 
 // Include the hashHistory prop to handle routing client side without a server
@@ -30,7 +29,7 @@ import Main from "../components/main";
 
 
 // Export the Routes
-module.exports = (
+export default (
 
   // The high level component is the Router component
   <Router history={hashHistory}>

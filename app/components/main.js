@@ -1,6 +1,7 @@
 // Include React
 // var React = require("react");
 import React from "react";
+import ReactDOM from "react-dom";
 import PropTypes from 'prop-types';
 
 // Here we include all of the sub-components
@@ -98,7 +99,7 @@ class Main extends React.Component {
                           // onChange={this.handleChange}
                           required
                         />
-                        <button type="submit" class="btn btn-default">Submit</button>
+                        <button type="submit" className="btn btn-default">Submit</button>
                       </div>
                     </form>
                   </div>
@@ -154,15 +155,14 @@ class Main extends React.Component {
   }
 };
 
-// Export the component back for use in other files
 
-export default Main;
+ReactDOM.render(
+  <Main />, document.getElementById("app"));
 
-// OR
-
-// ReactDOM.render(
-//   <App />, document.getElementById("app"));
+// Why do we use the above? // 
 
 // OR
+
+// export default Main;
 
 // module.exports = Main;
