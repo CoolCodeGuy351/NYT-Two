@@ -2,8 +2,14 @@ import React from 'react';
 import helper from '../../utils/helper';
 import Search from './panels/Search';
 
-const SearchContainer = React.createClass({
-    
+class SearchContainer extends React.Component {
+
+    constructor() {
+
+    super();
+
+    }
+
     // getInitialState: function() {
 
     //     return {queryTerm: ""};
@@ -76,16 +82,18 @@ const SearchContainer = React.createClass({
     //     this.setState({queryTerm: term});
     // }, 
     // Here we describe this component's render method
-    render: function() {
+    render() {
         return (
             <div>
-                <Search setTerm={this.setTerm} setStartYear={this.startYear} setEndYear={this.endYear} results={this.state.results} />
+                <Search />
 
             </div>
+
+            //{/* ((THIS GOES IN SEARCH COMPONENT ABOVE WHEN ITS NOT NULL))  results={this.state.results}*/}
 
         );
     }
 
-});
+};
 
-module.exports = SearchContainer;
+export default SearchContainer;

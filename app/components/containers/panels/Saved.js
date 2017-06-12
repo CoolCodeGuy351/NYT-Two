@@ -4,7 +4,7 @@ import React from 'react';
 
 var Saved = function(props) {
 	 return (
-        <div>{/*{props.articles}*/}</div>
+        <div>Saved! Hello World!</div>
     );
 };
 

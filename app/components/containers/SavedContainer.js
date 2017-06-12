@@ -2,7 +2,14 @@ import React from 'react';
 import helper from '../../utils/helper';
 import Saved from './panels/Saved';
 
-const SavedContainer = React.createClass({
+class SavedContainer extends React.Component {
+
+    constructor() {
+
+    super();
+
+    }
+
     
     // getInitialState: function() {
     //     return {articles: []}
@@ -63,7 +70,7 @@ const SavedContainer = React.createClass({
 
     // },
     
-    render: function() {
+    render() {
         return (
             <div className="container">
                 <div className="row">
@@ -74,7 +81,7 @@ const SavedContainer = React.createClass({
                                 <h3 className="panel-title text-center">Saved Articles</h3>
                             </div>
                             <div className="panel-body">
-                                <Saved articles={this.state.articles} deleteArticle={this.deleteArticle} />
+                                <Saved />
                             </div>
                         </div>
                     </div>
@@ -84,6 +91,6 @@ const SavedContainer = React.createClass({
         );
     }
 
-});
+};
 
-module.exports = SavedContainer;
+export default SavedContainer;

@@ -1,6 +1,12 @@
 import React from 'react';
 
-var Search = React.createClass({
+class Search extends React.Component {
+
+    constructor() {
+
+    super();
+
+    }
       // Here we set a generic state associated with the text being searched for
     // getInitialState: function() {
     //     return {term: "", startYear: "", endYear: ""};
@@ -29,7 +35,7 @@ var Search = React.createClass({
     // },
 
     // Here we descibe this component's render method
-    render: function() {
+    render() {
         return (
             <div className="container">
                 <div className="row">
@@ -45,17 +51,19 @@ var Search = React.createClass({
                                         <h4 className="">
                                             <strong>Term</strong>
                                         </h4>
-
-                                        <input type="text" value={this.state.term} className="form-control" id="term" onChange={this.handleChange} required/>
+                                        
+                                        <input type="text" className="form-control" id="term" required/>
                                         <h4>
                                             <strong>Start Year</strong>
                                         </h4>
-                                        <input type="text" value={this.state.startYear} className="form-control" id="startYear" onChange={this.handleChange} required/>
+                                       
+                                        <input type="text" className="form-control" id="startYear" required/>
 
                                         <h4>
                                             <strong>End Year</strong>
                                         </h4>
-                                        <input type="text" value={this.state.endYear} className="form-control" id="endYear" onChange={this.handleChange} required/>
+                                        
+                                        <input type="text" className="form-control" id="endYear" required/>
                                         <br></br>
                                         <button className="btn btn-primary btn-lg" id="load" data-loading-text="<i className='fa fa-circle-o-notch fa-spin'></i> Processing Order">Search</button>
                                     </div>
@@ -71,7 +79,9 @@ var Search = React.createClass({
                                 <h3 className="panel-title text-center">Results</h3>
                             </div>
                             <div className="panel-body">
-                                <div>{this.props.results}</div>
+
+                                
+                                <div>Hello World!</div>
                             </div>
                         </div>
                     </div>
@@ -79,7 +89,7 @@ var Search = React.createClass({
             </div>
         );
     }
-});
+};
 
 // Export the component back for use in other files
-module.exports = Search;
+export default Search;

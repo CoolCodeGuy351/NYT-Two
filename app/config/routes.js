@@ -1,3 +1,5 @@
+
+
 //Include the React library
 var React = require('react');
 
@@ -13,19 +15,21 @@ var Router = router.Router;
 
 //Include the hashHistory prop to handle routing client side without a server
 // var hashHistory = router.hashHistory;
-var browserHistory = router.browserHistory;
+var hashHistory = router.hashHistory;
 //Include the IndexRoute (catch-all route)
 var IndexRoute = router.IndexRoute;
 
-var Main = require('../components/Main');
-var SavedContainer = require('../components/containers/SavedContainer');
-var SearchContainer = require('../components/containers/SearchContainer');
+
+import Main from '../components/Main';
+import SavedContainer from '../components/containers/SavedContainer';
+import SearchContainer from '../components/containers/SearchContainer';
+
 
 module.exports = (
 
 //the high level component is the Router component 
 
- <Router history = {browserHistory}>
+ <Router history = {hashHistory}>
         <Route path="/" component={Main}>
 
 <Route path="saved" component={SavedContainer} />
