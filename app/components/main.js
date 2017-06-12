@@ -1,168 +1,68 @@
-// Include React
-// var React = require("react");
-import React from "react";
-import ReactDOM from "react-dom";
-import PropTypes from 'prop-types';
-
+import React from 'react';
+var Link = require('react-router').Link;
 // Here we include all of the sub-components
-// var Form = require("./form");
-// import Form from "./form";
-
-// Requiring our helper for making API calls
-// var helpers = require("../utils/helper");
+import SavedContainer from './containers/SavedContainer';
+import SearchContainer from './containers/SearchContainer';
+import Saved from './containers/panels/Saved';
+import Search from './containers/panels/Search';
+import styles from '../styles';
 import helpers from "../utils/helper";
 
-// Create the Main Component
-class Main extends React.Component {
+// Create the Main Component with class
+var Main = function(props) {
 
-  constructor() {
-
-    super();
-
-    // this.state = {
-    //   count: 0
-    // };
-    // // Since we're passing these methods to be used as callback functions,
-    // // we should bind them to our component here
-    // this.handleIncrement = this.handleIncrement.bind(this);
-    // this.handleDecrement = this.handleDecrement.bind(this);
-  }
-
- 
-  // Here we render the function
-  render() {
     return (
 
       <div className="container">
 
-        <div className="row">
-          <div className="col">
-            <div className="jumbotron">
-              <h2>NYT Search</h2>
-              <hr />
-              <p>
-                <em>Search & Save your favorite NYT Articles!</em>
-              </p>
-                {/*
-                  Here we create a button click.
-                  Note how we have an onClick event associate with our handleClick function.
-                */}
-            </div>
-          </div>
-      </div>
+        <div className="navbar">
+                <div className="container">
 
-        {/*                       Search Menu                             */}
+                    <div className="navbar-header">
+                        <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span className="sr-only">Toggle navigation</span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                            <span className="icon-bar"></span>
+                        </button>
+                        <a className="navbar-brand" href="/">NYT</a>
+                    </div>
 
-        <div className="row">
-              <div className="col">
-                <div className="panel panel-default">
-                  <div className="panel-heading">
-                    <h3 className="panel-title text-center">Form</h3>
-                  </div>
-                  <div className="panel-body text-center">
-                    <form>
-                      <div className="form-group">
-                        <h4 className="">
-                          <strong>Topic</strong>
-                        </h4>
-                        {/*
-                          Note how each of the form elements has an id that matches the state.
-                          This is not necessary but it is convenient.
-                          Also note how each has an onChange event associated with our handleChange event.
-                        */}
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="topic"
-                          // onChange={this.handleChange}
-                          required
-                        />
-
-                        <h4>
-                          <strong>Start Year</strong>
-                        </h4>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="start"
-                          // onChange={this.handleChange}
-                          required
-                        />
-
-                        <h4>
-                          <strong>End Year</strong>
-                        </h4>
-                        <input
-                          type="text"
-                          className="form-control"
-                          id="end"
-                          // onChange={this.handleChange}
-                          required
-                        />
-                        <button type="submit" className="btn btn-default">Submit</button>
-                      </div>
-                    </form>
-                  </div>
+                    <div className="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul className="nav navbar-nav">
+                            <li>
+                                <Link to="/search">Search
+                                    <span className="sr-only">(current)</span>
+                                </Link>
+                            </li>
+                            <li>
+                                <Link to="/saved">Saved</Link>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-              </div>
         </div>
+        <div className="jumbotron text-center" style={styles.transparentBg}>
+                <div className="container">
+                    <h1>MERN Stack Article Finder</h1>
+                    <p>Search for and save articles from the New York Times</p>
+                </div>
+        </div>
+        <div className="container">
+                <div className="row">
+                    <div className="col-md-12">
+                    
+                        {props.children}
 
-      {/*                        Results Section                           */}
-
-      <div className="row">
-
-          <div className="col-lg-12">
-
-            <div className="panel panel-default">
-              <div className="panel-heading">
-                <h3 className="panel-title">Search Results</h3>
-              </div>
-              <div className="panel-body text-center">
-                <p><strong>Movie 1</strong> Movie 1 </p>
-                <p><strong>Movie 2</strong> Movie 2 </p>
-                <p><strong>Movie 3</strong> Movie 3 </p>
-              </div>
-            </div>
-
-          </div>
-
-      </div>
-
-
-      {/*                        Saved Article Section Section                           */}
-
-      <div className="row">
-
-          <div className="col-lg-12">
-
-            <div className="panel panel-default">
-              <div className="panel-heading">
-                <h3 className="panel-title">Saved Articles</h3>
-              </div>
-              <div className="panel-body text-center">
-                <p><strong>Movie 1</strong> Movie 1 </p>
-                <p><strong>Movie 2</strong> Movie 2 </p>
-                <p><strong>Movie 3</strong> Movie 3 </p>
-              </div>
-            </div>
-
-          </div>
-
-      </div>
+                    </div>
+                </div>
+        </div>
       
       </div>
     );
-  }
 };
 
 
-ReactDOM.render(
-  <Main />, document.getElementById("app"));
+export default Main;
 
-// Why do we use the above? // 
 
-// OR
-
-// export default Main;
-
-// module.exports = Main;

@@ -3,7 +3,7 @@
 import axios from "axios";
 
 // Exporting an object with methods for retrieving and posting data to our API
-export default  {
+var helper =  {
   // Returns a promise object we can .then() off inside our Parent component
   getClicks: function() {
     return axios.get("/api");
@@ -14,3 +14,5 @@ export default  {
     return axios.post("/api", clickData);
   }
 };
+
+export default helper;
